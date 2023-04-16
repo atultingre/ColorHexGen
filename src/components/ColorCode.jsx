@@ -16,12 +16,11 @@ const ColorCode = () => {
     const randomColor = `#${hexVal}`;
     setRandomColorValue(randomColor);
     setColorValue(randomColor);
-    // setHexValue(randomColor);
   };
 
   return (
     <div className="color-name">
-      <h3>Get the Color Code</h3>
+      <h3>Color Hex Generator</h3>
       <Square colorValue={colorValue} hexValue={hexValue} isDarkText={isDarkText} randomColor={randomColorValue} />
       <Input colorValue={colorValue} setColorValue={setColorValue} setHexValue={setHexValue} isDarkText={isDarkText} setIsDarkText={setIsDarkText} randomColor={randomColor} />
     </div>
