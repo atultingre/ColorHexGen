@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./GradientGenerator.css"
+import "./GradientGenerator.css";
 const GradientGenerator = () => {
   const [direction, setDirection] = useState("to left top");
   const [color1, setColor1] = useState("#5665E9");
@@ -10,7 +10,7 @@ const GradientGenerator = () => {
   useEffect(() => {
     generateGradient();
     // eslint-disable-next-line
-  }, [color1,color2,direction]);
+  }, [color1, color2, direction]);
 
   const getRandomColor = () => {
     const randomHex = Math.floor(Math.random() * 0xffffff).toString(16);
@@ -39,7 +39,9 @@ const GradientGenerator = () => {
         <div className="column direction">
           <p>Direction</p>
           <div className="select-box">
-            <select value={direction} onChange={(e) => setDirection(e.target.value)}>
+            <select
+              value={direction}
+              onChange={(e) => setDirection(e.target.value)}>
               <option value="to top">Top</option>
               <option value="to right top">Right top</option>
               <option value="to right">Right</option>
@@ -54,15 +56,30 @@ const GradientGenerator = () => {
         <div className="column palette">
           <p>Colors</p>
           <div className="colors">
-            <input type="color" value={color1} onChange={(e) => setColor1(e.target.value)} />
-            <input type="color" value={color2} onChange={(e) => setColor2(e.target.value)} />
+            <input
+              type="color"
+              value={color1}
+              onChange={(e) => setColor1(e.target.value)}
+            />
+            <input
+              type="color"
+              value={color2}
+              onChange={(e) => setColor2(e.target.value)}
+            />
           </div>
         </div>
       </div>
-      <textarea className="row" disabled value={`background: ${gradient};`}></textarea>
+      <textarea
+        className="row"
+        disabled
+        value={`background: ${gradient};`}></textarea>
       <div className="row buttons">
-        <button className="refresh" onClick={() => generateGradient(true)}>Refresh Colors</button>
-        <button className="copy" onClick={copyCode}>{copied ? "Code Copied" : "Copy Code"}</button>
+        <button className="refresh" onClick={() => generateGradient(true)}>
+          Refresh Colors
+        </button>
+        <button className="copy" onClick={copyCode}>
+          {copied ? "Code Copied" : "Copy Code"}
+        </button>
       </div>
     </div>
   );
