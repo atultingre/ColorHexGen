@@ -1,8 +1,6 @@
-/* Import Google font */
-/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap'); */
-
 .container {
-  margin: 20px;
+  margin: auto;
+  /* margin: 20px; */
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
